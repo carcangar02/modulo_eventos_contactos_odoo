@@ -8,11 +8,6 @@
         <field name="domain">[('is_tutor', '=', True)]</field>
     </record>
 
-    <menuitem id="menuitem_family"
-        parent="contacts.menu_contacts"
-        name="Familias"
-        action="prueba_contactos.action_tutorized"/>
-
     <menuitem id="menuitem_tutors"
         parent="prueba_contactos.menuitem_family"
         name="Tutores"

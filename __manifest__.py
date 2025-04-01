@@ -7,8 +7,8 @@
     'license': 'LGPL-3',
     'depends': [],
     'data': [
-        'views/res_partner_views.xml',
         'views/tutorized_views.xml',
+        'views/res_partner_views.xml',
         'security/ir_model_access.xml',
         ],
     'installable': True,
