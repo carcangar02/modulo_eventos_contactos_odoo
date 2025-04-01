@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_tutors" model="ir.actions.act_window">
+        <field name="name">Tutores</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_tutor', '=', True)]</field>
+    </record>
+
+    <menuitem id="menuitem_family"
+        parent="contacts.menu_contacts"
+        name="Familias"
+        action="prueba_contactos.action_tutorized"/>
+
+    <menuitem id="menuitem_tutors"
+        parent="prueba_contactos.menuitem_family"
+        name="Tutores"
+        action="prueba_contactos.action_tutors"/>
+
+</odoo>
