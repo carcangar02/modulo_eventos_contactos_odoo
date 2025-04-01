@@ -57,6 +57,11 @@
         <field name="res_model">tutorized</field>
     </record>
 
+    <menuitem id="menuitem_family"
+        parent="contacts.menu_contacts"
+        name="Familias"
+        action="prueba_contactos.action_tutorized"/>
+
     <menuitem id="menuitem_tutorized"
         parent="prueba_contactos.menuitem_family"
         name="Tutorizados"
