@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record id="view_partner_form_tutor" model="ir.ui.view">
+        <field name="name">view.partner.form.tutor</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
 
+            <xpath expr="//sheet/group/group" position="inside">
+                <field name="tutorized_ids" />
+            </xpath>
+
+        </field>
+    </record>
     <record id="action_tutors" model="ir.actions.act_window">
         <field name="name">Tutores</field>
         <field name="res_model">res.partner</field>
@@ -9,8 +20,8 @@
     </record>
 
     <menuitem id="menuitem_tutors"
-        parent="prueba_contactos.menuitem_family"
+        parent="modulo_contacts_newpa.menuitem_family"
         name="Tutores"
-        action="prueba_contactos.action_tutors"/>
+        action="modulo_contacts_newpa.action_tutors"/>
 
 </odoo>

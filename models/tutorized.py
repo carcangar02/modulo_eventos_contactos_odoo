@@ -6,13 +6,15 @@ from datetime import date
 class Tutorized(models.Model):
     _name = "tutorized"
     _description = "Menor de edad Tutorizado"
-
+    
     name = fields.Char("Nombre", required=True)
     birth_date = fields.Date("Fecha de Nacimiento")
     actual_age = fields.Integer(string="Edad", compute='_compute_age', store=True)
-    tutor_id = fields.Many2one('res.partner', string="Tutor encargado del menor", domain=[('is_company', '=', False)])
+    tutor_id = fields.Many2one('res.partner',  string="Tutor encargado del menor", domain=[('is_company', '=', False)])
     is_relative = fields.Boolean('¿Es hijo/a del tutor')
     medical_condition = fields.Char(string="Especificar si existe alguna condición médica / alergia o intolerancia / toma alguna medicina / dieta especial")
+    notas_internas = fields.Text("Notas internas", help="Notas internas del menor, no visibles para el usuario")
+    event_id = fields.Many2many('event.event', readonly= True, string="Evento al que pertenece")
     genre = fields.Selection([
         ('male', 'Hombre'),
         ('female', 'Mujer')
@@ -40,8 +42,7 @@ class Tutorized(models.Model):
         ('native', 'Nativo'),
         ('not_sure', 'No estoy seguro'),
     ], string="Nivel de Inglés")
-    photo_carnet = fields.Char(string="Foto carnet del participante (enlace)")
-    image_1920 = fields.Image(string="Foto")
+
 
     @api.depends('birth_date')
     def _compute_age(self):

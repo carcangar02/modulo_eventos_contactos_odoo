@@ -2,7 +2,7 @@
 
     <record id="model_access_tutorized" model="ir.model.access">
         <field name="name">model.access.tutorized</field>
-        <field name="model_id" ref="prueba_contactos.model_tutorized"/>
+        <field name="model_id" ref="modulo_contacts_newpa.model_tutorized"/>
         <field name="group_id" ref="base.group_system"/>
         <field name="perm_create" eval="1"/>
         <field name="perm_write" eval="1"/>

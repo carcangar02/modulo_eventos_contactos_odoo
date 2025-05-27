@@ -7,10 +7,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="actual_age"/>
                 <field name="tutor_id"/>
-                <field name="genre"/>
-                <field name="school"/>
             </tree>
         </field>
     </record>
@@ -27,24 +24,11 @@
                                 <field name="name" placeholder="Nombre"/>
                             </h1>
                         </div>
-                        <field name="image_1920" widget="image" class="oe_avatar" options="{'zoom':true}"/>
                         <group>
-                            <field name="birth_date">
-                                <attribute name="options">{"datepicker": {"max": 0}}</attribute>
-                            </field>
-                            <field name="actual_age"/>
                             <field name="tutor_id"/>
-                            <field name="is_relative"/>
-                            <field name="medical_condition"/>
                         </group>
-                        <group>
-                            <field name="genre"/>
-                            <field name="vaccine"/>
-                            <field name="school"/>
-                            <field name="has_course"/>
-                            <field name="english_level"/>
-                            <field name="photo_carnet"/>
-                        </group>
+                        <field name="event_id"/>
+                        <field name="notas_internas"/>
                     </group>
                 </sheet>
             </form>
@@ -60,11 +44,11 @@
     <menuitem id="menuitem_family"
         parent="contacts.menu_contacts"
         name="Familias"
-        action="prueba_contactos.action_tutorized"/>
+        action="modulo_contacts_newpa.action_tutorized"/>
 
     <menuitem id="menuitem_tutorized"
-        parent="prueba_contactos.menuitem_family"
+        parent="modulo_contacts_newpa.menuitem_family"
         name="Tutorizados"
-        action="prueba_contactos.action_tutorized"/>
+        action="modulo_contacts_newpa.action_tutorized"/>
 
 </odoo>
